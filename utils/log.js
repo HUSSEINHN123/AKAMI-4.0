@@ -15,13 +15,13 @@ module.exports = (_0x4fca9b, _0x56c194) => {
 module.exports.loader = (_0x2697bc, _0x5b4185) => {
   switch (_0x5b4185) {
     case "warn":
-      console.log(chalk.bold.hex("#ff334b").bold("[✨ SAGOR ✨] » ") + _0x2697bc);
+      console.log(chalk.bold.hex("#ff334b").bold("[✨ MIRAI-BOT ✨] » ") + _0x2697bc);
       break;
     case 'error':
-      console.log(chalk.bold.hex("#b4ff33").bold("[✨ SAGOR ✨] » ") + _0x2697bc);
+      console.log(chalk.bold.hex("#b4ff33").bold("[✨ MIRAI-BOT ✨] » ") + _0x2697bc);
       break;
     default:
-      console.log(chalk.bold.hex('#33ffc9').bold("[✨ SAGOR ✨] » ") + _0x2697bc);
+      console.log(chalk.bold.hex('#33ffc9').bold("[✨ MIRAI-BOT ✨] » ") + _0x2697bc);
       break;
   }
 };
