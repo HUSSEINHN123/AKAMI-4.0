@@ -38,7 +38,7 @@ global.countRestart = global.countRestart || 0;
 function startBot(message) {
     if (message) logger(message, "[ Starting ]");
 
-    const child = spawn("node", ["--trace-warnings", "--async-stack-traces", "Sagor.js"], {
+    const child = spawn("node", ["--trace-warnings", "--async-stack-traces", "mirai.js"], {
         cwd: __dirname,
         stdio: "inherit",
         shell: true
@@ -92,7 +92,7 @@ try {
     logger(packageInfo.description, "[ DESCRIPTION ]");
     
     // Try to check for updates, but don't stop the bot if it fails
-    axios.get("https://raw.githubusercontent.com/SAGOR-KINGx/mirai_bot_v3/main/package.json")
+    axios.get("https://raw.githubusercontent.com/rm7629534/mirai_bot/refs/heads/main/package.json")
         .then((res) => {
             // Only log if successful, don't stop the bot if there's an error
             if (res.data && res.data.version) {
