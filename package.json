@@ -1,8 +1,8 @@
 {
-		"name": "sagor-bot-v2",
+		"name": "mirai-bot",
 		"version": "10.1.1",
-		"description": "A simple Facebook Messenger Bot made by Sagor.",
-		"main": "Sagor.js",
+		"description": "A simple Facebook Messenger Bot made by Aminul Sardar ",
+		"main": "mirai.js",
 		"engines": {
 				"node": "20.x",
 				"npm": "10.0.0"
@@ -14,7 +14,7 @@
 		},
 		"repository": {
 				"type": "git",
-				"url": "https://github.com/Uzi-SaGor-01/xox/issues"
+				"url": "https://github.com/rm7629534/mirai_bot/issues"
 		},
 		"keywords": [
 				"bot",
@@ -26,12 +26,12 @@
 				"princesagor",
 				"mental"
 		],
-		"author": "JAHIDUL ISLAM SAGOR",
+		"author": "Aminul sardar",
 		"license": "GPL-3.0",
 		"bugs": {
-				"url": "https://github.com/Uzi-SaGor-01/xox/issues"
+				"url": "https://github.com/rm7629534/mirai_bot/issues"
 		},
-		"homepage": "https://github.com/Uzi-SaGor-01/xox/issues",
+		"homepage": "https://github.com/rm7629534/mirai_bot/issues",
 		"dependencies": {
 				"axios": "^1.7.2",
 				"body-parser": "^1.20.0",
