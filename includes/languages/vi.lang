@@ -1,103 +1,101 @@
-# If you want to move down the line, please use \n. e.g: Priyanshu\nPriyansh.
-# After changed, you have to restart the bot to use.
-# Put the # character at the beginning of each sentence if you don't want the code to run those lines. 
-# Thanks to https://www.facebook.com/duong.than.net for translate to English!
+// Mirai.js (aminul sardar)
 
-# Priyansh.js 
+// System updates
+mirai.newVersionDetected=✨ You are using version %1, the latest is %2! Please update for better bot performance.\nType in console: node update
+mirai.errorFormat=❌ Malformed module detected!
+mirai.nameExist=⚠️ Module name conflicts with another module!
+mirai.notFoundLanguage=🌐 Language not supported → %1
+mirai.notFoundPackage=📦 Can't find package %1 for module %2, installing now...
+mirai.cantInstallPackage=❌ Failed to install package %1 for module %2, error: %3
+mirai.loadedPackage=✅ Installed all packages successfully for module %1
+mirai.loadedConfig=🛠️ Loaded configuration successfully for module %1
+mirai.cantLoadConfig=❌ Can't load config of module %1, error: %2
+mirai.cantOnload=❌ Can't run onLoad setup of module %1, error: %2
+mirai.successLoadModule=✅ Successfully loaded module %1
+mirai.failLoadModule=❌ Failed to load module %1, error: %2
+mirai.finishLoadModule=🎉 Loaded %1 command modules & %2 event modules successfully
+mirai.foundPathAppstate=🔑 Found appstate file, logging in...
+mirai.notFoundPathAppstate=❌ Appstate file not found or malformed!
+mirai.checkListGban=🔍 Checking global ban list...
+mirai.banDevice=🚫 Your device has been banned from MiraiProject!\nContact: https://www.facebook.com/JAHIDUL.ISLAM.404 for unban info
+mirai.keyNotSameFormat=❌ Wrong code format! Must be 6 digits.
+mirai.codeInputExpired=⌛ Your code is expired or incorrect.
+mirai.unbanDeviceSuccess=✅ Device unbanned successfully! Restart to use.
+mirai.userBanned=⛔ You were banned from MiraiProject at %1. Reason: %2\nContact: https://fb.me/JAHIDUL.ISLAM.404
+mirai.finishCheckListGban=✅ Global ban list checked
+mirai.handleListenError=⚠️ Listener error occurred: %1
+mirai.warningSourceCode=⚠️ Source code has been modified! Stopping execution!
+mirai.refreshListen=🔄 Listener refreshed
+mirai.successConnectDatabase=✅ Database connected successfully!
+mirai.failConnectDatabase=❌ Database connection failed, error: %1
 
-priyansh.errorFormat=Malformed module!
-priyansh.nameExist=Module's name is similar to another module!
-priyansh.notFoundLanguage=Module %1 don't support your language
-priyansh.notFoundPackage=Can't find package %1 support for module %2, installing...
-priyansh.cantInstallPackage=Can't install package %1 for module %2, error: %3
-priyansh.loadedPackage=Installed whole package successfully for module %1
-priyansh.loadedConfig=Installed config successfully for module %1
-priyansh.cantLoadConfig=Can't install config of module %1, error: %2
-priyansh.cantOnload=Can't launch setup of module %1, error: %1
-priyansh.successLoadModule=Successfully installed module %1
-priyansh.failLoadModule=Can't install module %1, error: %2
-priyansh.finishLoadModule=Installed %1 module commands and %2 module events successfully 
-priyansh.foundPathAppstate=Found file appstate
-priyansh.notFoundPathAppstate=Can't find file appstate
-priyansh.checkListGban=Cheking global ban list...
-priyansh.banDevice=Your device have been banned from miraiproject, please contact to facebook https://fb.me/catalizcs to know more information or asking for unban key, if you already have unban key, please fill it below.
-priyansh.keyNotSameFormat=Wrong format, code must contain 6 number.
-priyansh.codeInputExpired=Your code is wrong or out of date.
-priyansh.unbanDeviceSuccess=Your device are unban now, please restart to use.
-priyansh.userBanned=You had been banned from miraiproject when %1 with reason: %2. Please contact to facebook https://fb.me/catalizCS to have more information!
-priyansh.finishCheckListGban=Checked global ban list
-priyansh.handleListenError=handleListene has occurred some unexpected errorr, error : %1
-priyansh.warningSourceCode=DETECTED THAT SOURCE CODE'S STRUCTURE HAD BEEN CHANGED , STOP NOW!
-priyansh.refreshListen=Refreshed handleListener...
-priyansh.successConnectDatabase=Connected to database successfully!
-priyansh.failConnectDatabase=Failed to connect to database, error: %1
+// includes/listen.js
+listen.startLoadEnvironment=⚡ Loading environment variables...
+listen.loadedEnvironmentThread=✅ Thread environment variables loaded
+listen.loadedEnvironmentUser=✅ User environment variables loaded
+listen.successLoadEnvironment=🎉 Environment variables loaded successfully
+listen.failLoadEnvironment=❌ Failed to load environment variables, error: %1
 
-# includes/listen.js
+// includes/controller/currencies.js
+currencies.needObjectOrArray=❌ Must be an Array or Object
+currencies.needObject=❌ Must be an Object
+currencies.needNumber=❌ Must be a Number
 
-listen.startLoadEnvironment=Proceed to load the environment variable ...
-listen.loadedEnvironmentThread=Loaded thread environment variable successfully 
-listen.loadedEnvironmentUser=Loaded user environment variable successfully 
-listen.successLoadEnvironment=Loaded environment variable successfully 
-listen.failLoadEnvironment=Can't load environment variable, error: %1
+// includes/controller/threads.js
+threads.needObjectOrArray=❌ Must be an Array or Object
+threads.needObject=❌ Must be an Object
 
-# includes/controller/currencies.js
+// includes/controller/users.js
+users.needObjectOrArray=❌ Must be an Array or Object
+users.needObject=❌ Must be an Object
 
-currencies.needObjectOrArray=Have to be an Array or an Object or maybe both
-currencies.needObject=Have to be an Object
-currencies.needNumber= Have to be an number
+// includes/handle/handleCommand.js
+handleCommand.userBanned=⛔ You are banned!\nReason: %1\nBy: %2\nContact bot owner Mirai 🖤 for unban ⚠️
+handleCommand.threadBanned=⛔ Your thread/group is banned!\nReason: %1\nBy: %2\nContact owner Mirai for unban ⚠️
+handleCommand.commandNotExist=❌ Command does not exist! Type ^help to see available commands "%1"
+handleCommand.commandThreadBanned=⚠️ Your thread cannot use command "%1"
+handleCommand.commandUserBanned=⚠️ You cannot use command "%1"
+handleCommand.threadNotAllowNSFW=⚠️ NSFW commands are not allowed in this thread
+handleCommand.cantGetInfoThread=❌ Cannot get thread info, error: %1
+handleCommand.permssionNotEnough=❌ You do not have permission to use "%1" (Owner only)
+handleCommand.cantSetMessageReaction=❌ Error setting message reaction, error: %1
+handleCommand.executeCommand=🟢 [ %1 ] Command used: %2 by %3 at thread %4 | Args: %5 | Processing: %6ms
+handleCommand.commandError=❌ Error executing command %1, error: %2
 
-# includes/controller/threads.js
+// includes/handle/handleCommandEvent.js
+handleCommandEvent.moduleError=❌ Error executing command %1, error: %2
 
-threads.needObjectOrArray=Have to be an Array or an Object or maybe both
-threads.needObject=Have to be an Object 
+// includes/handle/handleCreateDatabase.js
+handleCreateDatabase.newThread=🆕 New thread created: %1
+handleCreateDatabase.newUser=🆕 New user created: %1
 
-# includes/controller/users.js
+// includes/handle/handleEvent.js
+handleEvent.executeEvent=🟢 [ %1 ] Event executed: %2 at thread %3 | Processing: %4ms
+handleEvent.eventError=❌ Error executing event %1, error: %2
 
-users.needObjectOrArray=Have to be an Array or an Object or maybe both
-users.needObject=Have to be an Object
+// includes/handle/handleReaction.js
+handleReaction.missingValue=❌ Missing value to respond
+handleReaction.executeError=❌ Error responding, error: %1
 
-# includes/handle/handleCommand.js
+// includes/handle/handleReply.js
+handleReply.missingValue=❌ Missing value to respond
+handleReply.executeError=❌ Error responding, error: %1
 
-handleCommand.userBanned=You are unable to use bot!\n%1\n%2
-handleCommand.threadBanned=Your thread are unable to use bot!\n%1\n%2
-handleCommand.commandNotExist=Mujhe Ye Command Nahi Mili Dusri Try Karlo ☣️🥀
-handleCommand.commandThreadBanned=Your thread is unable to use command "%1"
-handleCommand.commandUserBanned=You are unable to use command "%1"
-handleCommand.threadNotAllowNSFW=Your thread is not allowed to use NSFW commands
-handleCommand.cantGetInfoThread=Can't get your thread's info, error: %1
-handleCommand.permssionNotEnough=You have no permission to use command "%1"
-handleCommand.cantSetMessageReaction=Having some unexpected error at setMessageReaction, error: %1
-handleCommand.executeCommand=[ %1 ] Command used: %2 by user: %3 at thread: %4 | Args included: %5 | Processing time: %6ms
-handleCommand.commandError=Having some unexpected error when using command %1, error: %2
+// includes/handle/handleSchedule.js
+handleSchedule.exectuteError=❌ Error executing schedule for module %1, error: %2
 
-# includes/handle/handleCommandEvent.js
+// utils/index.js
+utils.throwError=ℹ️ Command cannot execute, try %1help %2 for usage 😉
 
-handleCommandEvent.moduleError=Having some unexpected error when using command %1, error: %2
 
-# includes/handle/handleCreateDatabase.js
-
-handleCreateDatabase.newThread=new thread: %1
-handleCreateDatabase.newUser=new user %1
-
-# includes/handle/handleEvent.js
-
-handleEvent.executeEvent=[ %1 ] Event was executed: %2 at thread: %3 | Processing time: %4ms
-handleEvent.eventError=Having some error when executing event %1, error: %12
-
-# includes/handle/handleReaction.js
-
-handleReaction.missingValue=Missing value to respond your problem
-handleReaction.executeError=Having some error when responding your problem, error: %1
-
-# includes/handle/handleReply.js
-
-handleReply.missingValue=Missing value to respond your problem
-handleReply.executeError=Having some error when responding your problem, error: %1
-
-# includes/handle/handleSchedule.js
-
-handleSchedule.exectuteError=Having some error when schedule at module %1, error: %2
-
-# utils/index.js
-
-utils.throwError=[!] The command you are using is not syntax correct, please use %1help %2 for more usage details
+// updater.js
+updater.latestVersion=✅ You are using the latest version
+updater.cantFindVersion=❌ Undefined version (%1), check package.json
+updater.newVersions=⚡ %1 new version(s) found, starting update...
+updater.updateSuccess=✅ Updated successfully %1
+updater.configChanged=⚠️ %1 changed, check config.json
+updater.installingPackages=📦 Installing bot dependencies...
+updater.installSuccess=✅ Dependencies installed, restart bot
+updater.backupSuccess=💾 Backup of changed files completed in %1 folder
+updater.restartToApply=🔄 Restart bot to apply new version
+updater.skipFile=⚠️ Skipped file %1 due to comment "%2"
