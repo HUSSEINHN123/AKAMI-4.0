@@ -1,39 +1,66 @@
 module.exports.config = {
   name: "prefix",
-  version: "1.0.1",
+  version: "1.3.0",
   hasPermssion: 0,
-  credits: "SAGOR",
-  description: "See the bot prefix",
-  commandCategory: "For admin",
-  usages: "out prefix",
+  credits: "abir", // do not change credits
+  description: "Show the bot's prefix",
+  commandCategory: "System",
+  usages: "prefix",
   cooldowns: 5,
 };
 
 module.exports.handleEvent = async ({ event, api, Threads }) => {
-  var { threadID, messageID, body, senderID } = event;
-  //if (senderID == global.data.botID) return;
-  if ((this.config.credits) != "SAGOR") { return api.sendMessage(`Changed credits!`, threadID, messageID)}
-  function out(data) {
-    api.sendMessage(data, threadID, messageID)
+  const { threadID, messageID, body } = event;
+
+  // Protect credits
+  if (this.config.credits !== "abir") {
+    return api.sendMessage("⚠️ Credits have been changed!", threadID, messageID);
   }
-  var dataThread = (await Threads.getData(threadID));
-  var data = dataThread.data; 
-  const threadSetting = global.data.threadData.get(parseInt(threadID)) || {};
 
-  var arr = ["mpre","mprefix","prefix", "dấu lệnh", "prefix của bot là gì","daulenh", "duong"];
-  arr.forEach(i => {
-    let str = i[0].toUpperCase() + i.slice(1);
-    if (body === i.toUpperCase() | body === i | str === body) {
-const prefix = threadSetting.PREFIX || global.config.PREFIX;
-      if (data.PREFIX == null) {
-        return out(`️️️️️️️️️️️️️️️️️️️️️️️️️🚀SAGOR-ROBOT PREFIX ⇉ [ ${prefix} ]`)
-      }
-      else return out(`️️️️️️️️️️️️️️️️️️️️️️️️️🛸SAGOR-ROBOT PREFIX  ⇉ 👉🏻 [ ${prefix} ]  `    + data.PREFIX )
-    }
+  const triggerWords = [
+    "mpre","mprefix","prefix",
+    "dấu lệnh","prefix của bot là gì",
+    "daulenh","duong"
+  ];
 
+  const check = triggerWords.some(word => {
+    let str = word[0].toUpperCase() + word.slice(1);
+    return body === word || body === word.toUpperCase() || body === str;
   });
+
+  if (!check) return;
+
+  const threadData = await Threads.getData(threadID);
+  const data = threadData.data || {};
+  const threadSetting = global.data.threadData.get(parseInt(threadID)) || {};
+  const prefix = data.PREFIX || threadSetting.PREFIX || global.config.PREFIX;
+
+  return api.sendMessage(
+`➽────────────────❥
+🌟 Bot Prefix Information 🌟
+
+💫 Current Prefix: [ ${prefix} ]
+🔧 Usage: Type "${prefix}help" to see all commands
+👑 Bot by: @Aminusardar
+🔗 Facebook: https://www.facebook.com/100071880593545
+🎯 Enjoy using the bot! 💖
+➽────────────────❥`,
+    threadID,
+    messageID
+  );
 };
 
-module.exports.run = async({ event, api }) => {
-    return api.sendMessage(`️️️️️️️️️️️️️️️️️️️️️️️️️This is my prefix⇉ [ ${global.config.PREFIX} ]`, event.threadID)
-      }
+module.exports.run = async ({ event, api }) => {
+  return api.sendMessage(
+`➽────────────────❥
+🌟 Bot Prefix Information 🌟
+
+💫 Current Prefix: [ ${global.config.PREFIX} ]
+🔧 Usage: Type "${global.config.PREFIX}help" to see all commands
+👑 Bot by: @Aminusardar
+🔗 Facebook: https://www.facebook.com/100071880593545
+🎯 Enjoy using the bot! 💖
+➽────────────────❥`,
+    event.threadID
+  );
+};
