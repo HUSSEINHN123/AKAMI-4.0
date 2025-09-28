@@ -14,7 +14,7 @@ module.exports.run = async function ({ api, event, args }) {
         const commands = Array.from(global.client.commands.values());
         const prefix = global.client.config?.PREFIX || "!";
         const totalCommands = commands.length;
-        const perPage = 10;
+        const perPage = 20;
         const totalPages = Math.ceil(totalCommands / perPage);
 
         // ========== If user asked for a specific command ==========
