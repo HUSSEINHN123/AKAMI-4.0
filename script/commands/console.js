@@ -2,7 +2,7 @@ module.exports.config = {
     name: "console",
     version: "1.0.0",
     hasPermssion: 3,
-    credits: "SaGor",
+    credits: "vv",
     description: "",
     commandCategory: "System",
     usages: "",
@@ -25,7 +25,7 @@ job[Math.floor(Math.random() * job.length)]
     var random1 = job[Math.floor(Math.random() * job.length)]
    var random2 = job[Math.floor(Math.random() * job.length)]
 var random4 = job[Math.floor(Math.random() * job.length)]
-    console.log(chalk.hex("#" + random)(`𝐁𝐨𝐱: ${nameBox}`) + " | " + chalk.hex("#" + random1)(`\n𝐍𝐚𝐦𝐞: ${nameUser}`) + " | " + chalk.hex("#" + random2)(`\n𝐓𝐞𝐱𝐭: ${msg}`) + `\n` + chalk.hex("#" + random4)(`[🌸] ──────────SAGOR────────── [🌸]`)); 
+    console.log(chalk.hex("#" + random)(`𝐁𝐨𝐱: ${nameBox}`) + " | " + chalk.hex("#" + random1)(`\n𝐍𝐚𝐦𝐞: ${nameUser}`) + " | " + chalk.hex("#" + random2)(`\n𝐓𝐞𝐱𝐭: ${msg}`) + `\n` + chalk.hex("#" + random4)(`[🌸] ──────────AMINUL-FCA────────── [🌸]`)); 
 }
 module.exports.run = async function ({ api, args, Users, event, Threads, utils, client }) {
   
