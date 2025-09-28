@@ -3,115 +3,71 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JAHIDUL ISLAM SAGOR</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<title>Mirai Bot Language File</title>
 <style>
     body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        background: #111;
-        font-family: 'Arial', sans-serif;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #1e1e1e;
+        color: #f0f0f0;
+        line-height: 1.6;
+        padding: 20px;
     }
-    .card {
-        background: linear-gradient(145deg, #1a1a1a, #222);
-        border-radius: 20px;
-        width: 300px;
+    h1 {
         text-align: center;
-        padding: 30px 20px;
-        box-shadow: 0 0 20px rgba(0,0,0,0.5);
-        transition: transform 0.3s, box-shadow 0.3s;
-        position: relative;
-        overflow: hidden;
-        cursor: pointer;
+        color: #ff6b6b;
+        margin-bottom: 20px;
     }
-    .card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 20px 40px rgba(0,255,255,0.3);
+    h2 {
+        color: #ffd93d;
+        margin-top: 30px;
     }
-    .avatar {
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        border: 3px solid #00ffff;
-        margin-bottom: 15px;
-        transition: transform 0.3s;
+    code {
+        display: block;
+        background: #2e2e2e;
+        padding: 10px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        overflow-x: auto;
+        white-space: pre-wrap;
     }
-    .card:hover .avatar {
-        transform: scale(1.1);
+    .key {
+        color: #4ecdc4;
+        font-weight: bold;
     }
-    .name {
-        font-size: 22px;
-        color: #00ffff;
-        margin-bottom: 5px;
+    .value {
+        color: #ff6b6b;
     }
-    .role {
-        font-size: 14px;
-        color: #aaa;
-        margin-bottom: 15px;
-    }
-    .social-links {
-        display: flex;
-        justify-content: center;
-        gap: 12px;
-    }
-    .social-links a {
-        text-decoration: none;
-        color: white;
-        width: 40px;
-        height: 40px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 50%;
-        transition: transform 0.3s, box-shadow 0.3s;
-        font-size: 18px;
-    }
-    .social-links a:hover {
-        transform: scale(1.2);
-        box-shadow: 0 0 10px #00ffff;
-    }
-    .facebook { background-color: #3b5998; }
-    .tiktok { background-color: #000000; }
-    .telegram { background-color: #0088cc; }
-    .whatsapp { background-color: #25D366; }
-    .github { background-color: #24292e; }
 </style>
 </head>
 <body>
 
-<div class="card" id="profileCard">
-    <img src="https://i.ibb.co.com/6JPqxzwK/65ce49408be82ad3f336bf32d4d69bd3.jpg" alt="Avatar" class="avatar">
-    <div class="name">JAHIDUL ISLAM SAGOR</div>
-    <div class="role">Bot Creator</div>
-    <div class="social-links">
-        <a href="https://facebook.com/JAHIDUL.ISLAM.404" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://tiktok.com/@11sagor_islam" target="_blank" class="tiktok"><i class="fab fa-tiktok"></i></a>
-        <a href="https://telegram.me/@xxSaGorxx" target="_blank" class="telegram"><i class="fab fa-telegram-plane"></i></a>
-        <a href="https://wa.me/+8801611079915" target="_blank" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://github.com/SAGOR_KINGx" target="_blank" class="github"><i class="fab fa-github"></i></a>
-    </div>
-</div>
+<h1>Mirai Bot Language File</h1>
 
-<audio id="bgAudio" loop>
-    <source src="https://raw.githubusercontent.com/Uzi-SaGor-01/Song/main/SAGOR.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-</audio>
+<h2>System Messages</h2>
+<code><span class="key">mirai.newVersionDetected</span>=<span class="value">✨ You are using version %1, the latest is %2! Please update for better bot performance.\nType in console: node update</span></code>
+<code><span class="key">mirai.errorFormat</span>=<span class="value">❌ Malformed module detected!</span></code>
+<code><span class="key">mirai.nameExist</span>=<span class="value">⚠️ Module name conflicts with another module!</span></code>
+<code><span class="key">mirai.notFoundLanguage</span>=<span class="value">🌐 Language not supported → %1</span></code>
+<code><span class="key">mirai.notFoundPackage</span>=<span class="value">📦 Can't find package %1 for module %2, installing now...</span></code>
+<code><span class="key">mirai.cantInstallPackage</span>=<span class="value">❌ Failed to install package %1 for module %2, error: %3</span></code>
+<code><span class="key">mirai.loadedPackage</span>=<span class="value">✅ Installed all packages successfully for module %1</span></code>
+<code><span class="key">mirai.loadedConfig</span>=<span class="value">🛠️ Loaded configuration successfully for module %1</span></code>
 
-<script>
-    const audio = document.getElementById('bgAudio');
+<h2>Database & Appstate</h2>
+<code><span class="key">mirai.foundPathAppstate</span>=<span class="value">🔑 Found appstate file, logging in...</span></code>
+<code><span class="key">mirai.notFoundPathAppstate</span>=<span class="value">❌ Appstate file not found or malformed!</span></code>
+<code><span class="key">mirai.successConnectDatabase</span>=<span class="value">✅ Database connected successfully!</span></code>
+<code><span class="key">mirai.failConnectDatabase</span>=<span class="value">❌ Database connection failed, error: %1</span></code>
 
-    window.addEventListener('load', () => {
-        audio.play().catch(() => {
-            console.log('Autoplay blocked, hover anywhere to start music');
-        });
-    });
+<h2>User & Thread Handling</h2>
+<code><span class="key">handleCommand.userBanned</span>=<span class="value">⛔ You are banned!\nReason: %1\nBy: %2\nContact bot owner Mirai 🖤 for unban ⚠️</span></code>
+<code><span class="key">handleCommand.threadBanned</span>=<span class="value">⛔ Your thread/group is banned!\nReason: %1\nBy: %2\nContact owner Mirai for unban ⚠️</span></code>
+<code><span class="key">handleCommand.commandNotExist</span>=<span class="value">❌ Command does not exist! Type ^help to see available commands "%1"</span></code>
 
-    document.body.addEventListener('mouseenter', () => {
-        audio.play();
-    });
-</script>
+<h2>Updater</h2>
+<code><span class="key">updater.latestVersion</span>=<span class="value">✅ You are using the latest version</span></code>
+<code><span class="key">updater.newVersions</span>=<span class="value">⚡ %1 new version(s) found, starting update...</span></code>
+<code><span class="key">updater.updateSuccess</span>=<span class="value">✅ Updated successfully %1</span></code>
 
 </body>
 </html>
